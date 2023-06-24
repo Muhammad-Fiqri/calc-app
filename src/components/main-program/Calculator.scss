@@ -13,6 +13,8 @@ $btn-color : #0B3948;
 
     .return-wrp {
         justify-self: flex-end;
+        padding: 10px;
+
         .return-btn {
             padding: 10px;
             border-radius: 10px;
@@ -56,24 +58,6 @@ $btn-color : #0B3948;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: repeat(5,1fr);
             grid-gap: 20px;
-
-            .key-wrp {
-                aspect-ratio: 1/1;
-                width: 100%;
-                height: 100%;
-    
-                button {
-                    width: 100%;
-                    height: 100%;
-                    background-color: $bg-color;
-                    
-                    border: 0;
-                    border-radius: 20px;
-    
-                    font-size: 70px;
-                    text-align: center;
-                }
-            }
         }
     }
 }
