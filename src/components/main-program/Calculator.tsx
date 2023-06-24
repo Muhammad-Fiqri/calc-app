@@ -2,8 +2,27 @@ import "./Calculator.scss";
 import { useState, useEffect } from 'react';
 import $ from 'jquery';
 
+import Key from "../key/Key.tsx";
+
 export default function Calculator() {
     const [val,set_val] = useState("");
+    const keyObj = [
+        {id : 0, key : '1'},
+        {id : 1, key : '2'},
+        {id : 2, key : '3'},
+        {id : 3, key : '4'},
+        {id : 4, key : '5'},
+        {id : 5, key : '6'},
+        {id : 6, key : '7'},
+        {id : 7, key : '8'},
+        {id : 8, key : '9'},
+        {id : 9, key : '0'},
+        {id : 10, key : '+'},
+        {id : 11, key : '-'},
+        {id : 12, key : '/'},
+        {id : 13, key : 'X'},
+        {id : 14, key : '='},
+    ]
 
     useEffect(() => {
         console.log("calculator val : ",val);
@@ -30,51 +49,7 @@ export default function Calculator() {
             </div>
             <div className="keyboard-wrp">
                 <div className="bg">
-                    <div className="key-wrp">
-                        <button id="key-1">1</button>
-                    </div>
-                    <div className="key-wrp">
-                        <button id="key-2">2</button>
-                    </div>
-                    <div className="key-wrp">
-                        <button id="key-3">3</button>
-                    </div>
-                    <div className="key-wrp">
-                        <button id="key-4">4</button>
-                    </div>
-                    <div className="key-wrp">
-                        <button id="key-5">5</button>
-                    </div>
-                    <div className="key-wrp">
-                        <button id="key-6">6</button>
-                    </div>
-                    <div className="key-wrp">
-                        <button id="key-7">7</button>
-                    </div>
-                    <div className="key-wrp">
-                        <button id="key-8">8</button>
-                    </div>
-                    <div className="key-wrp">
-                        <button id="key-9">9</button>
-                    </div>
-                    <div className="key-wrp">
-                        <button id="key-0">0</button>
-                    </div>
-                    <div className="key-wrp">
-                        <button id="key--">-</button>
-                    </div>
-                    <div className="key-wrp">
-                        <button id="key-+">+</button>
-                    </div>
-                    <div className="key-wrp">
-                        <button id="key-÷">÷</button>
-                    </div>
-                    <div className="key-wrp">
-                        <button id="key-x">x</button>
-                    </div>
-                    <div className="key-wrp">
-                        <button id="key-=">=</button>
-                    </div>
+                    {keyObj.map((item) => <Key keyNum={item.key} id={item.id}/>)}
                 </div>
             </div>
         </div>
