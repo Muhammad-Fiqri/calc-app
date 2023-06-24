@@ -4,12 +4,12 @@ $btn-color : #0B3948;
 .Calculator-wrp {
     background-color: $bg-color;
     width: 100vw;
-    height: 100vh;
+    height: auto;
 
     overflow-y: scroll;
 
     display: grid;
-    grid-template-rows: 1fr 1fr 8fr;
+    grid-template-rows: 1fr 2fr 8fr;
 
     .return-wrp {
         justify-self: flex-end;
@@ -17,6 +17,63 @@ $btn-color : #0B3948;
             padding: 10px;
             border-radius: 10px;
             background-color: $btn-color;
+        }
+    }
+
+    .output-wrp {
+        input {
+            width: 90vw;
+            height: 90%;
+
+            position: relative;
+            inset: 5% 5vw 5% 5vw;
+
+            border: 5px solid #0B3948;
+            border-radius: 15px;
+
+            background-color: transparent;
+
+            font-size: 50px;
+            text-align: center;
+
+            outline: none;
+        }
+    }
+
+    .keyboard-wrp {
+        padding-bottom: 10%;
+        .bg {
+            background-color: $btn-color;
+        
+            width: 80vw;
+            height: 90%;
+            position: relative;
+            inset: 5% 5vw 5% 5vw;
+            border-radius: 20px;
+            padding: 5% 5% 8% 5%;
+    
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(5,1fr);
+            grid-gap: 20px;
+
+            .key-wrp {
+                aspect-ratio: 1/1;
+                width: 100%;
+                height: 100%;
+    
+                button {
+                    width: 100%;
+                    height: 100%;
+                    background-color: $bg-color;
+                    
+                    border: 0;
+                    border-radius: 20px;
+    
+                    font-size: 70px;
+                    text-align: center;
+                }
+            }
         }
     }
 }
