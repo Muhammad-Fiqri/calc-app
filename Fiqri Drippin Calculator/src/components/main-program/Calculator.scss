@@ -1,0 +1,22 @@
+$bg-color : #D9DBF1;
+$btn-color : #0B3948;
+
+.Calculator-wrp {
+    background-color: $bg-color;
+    width: 100vw;
+    height: 100vh;
+
+    overflow-y: scroll;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 8fr;
+
+    .return-wrp {
+        justify-self: flex-end;
+        .return-btn {
+            padding: 10px;
+            border-radius: 10px;
+            background-color: $btn-color;
+        }
+    }
+}
