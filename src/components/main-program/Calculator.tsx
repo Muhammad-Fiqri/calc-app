@@ -1,11 +1,16 @@
 import "./Calculator.scss";
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { ChangeOutput } from "../../redux/CalcReducer.ts";
+
 import $ from 'jquery';
 
 import Key from "../key/Key.tsx";
 
 export default function Calculator() {
-    const [val,set_val] = useState("");
+    const dispatch = useDispatch();
+    const calc = useSelector((state:any) => state.calc.value);
+
     const keyObj = [
         {id : 0, key : '1'},
         {id : 1, key : '2'},
@@ -20,12 +25,12 @@ export default function Calculator() {
         {id : 10, key : '+'},
         {id : 11, key : '-'},
         {id : 12, key : '/'},
-        {id : 13, key : 'X'},
+        {id : 13, key : '*'},
         {id : 14, key : '='},
     ]
 
     useEffect(() => {
-        console.log("calculator val : ",val);
+        console.log("calculator val : ",calc);
     });
 
     const returnUp = () => {
@@ -45,11 +50,11 @@ export default function Calculator() {
                 </button>
             </div>
             <div className="output-wrp">
-                <input type="text" value={val} onChange={(e) => {set_val(e.target.value)}}/>
+                <input type="text" value={calc} onChange={(e) => {dispatch(ChangeOutput(e.target.value));}}/>
             </div>
             <div className="keyboard-wrp">
                 <div className="bg">
-                    {keyObj.map((item) => <Key keyNum={item.key} id={item.id}/>)}
+                    {keyObj.map((item) => <Key keyNum={item.key} key={item.id}/>)}
                 </div>
             </div>
         </div>
