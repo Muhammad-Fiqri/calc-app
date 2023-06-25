@@ -1,8 +1,9 @@
 # calc-app
 
 I made this with
--React
--Sass
--Redux
+-React (Front-End Framework)
+-Sass (Styling)
+-Redux (State Storage)
+-Nerdamer (Calculation Package)
 
 to help me learn React.js
