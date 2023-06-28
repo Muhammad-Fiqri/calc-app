@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ChangeOutput } from "../../redux/CalcReducer.ts";
 
 import $ from 'jquery';
-
 import Key from "../key/Key.tsx";
 
 export default function Calculator() {
@@ -27,18 +26,21 @@ export default function Calculator() {
         {id : 12, key : '/'},
         {id : 13, key : '*'},
         {id : 14, key : '='},
+        {id : 15, key : 'Del'},
     ]
 
     useEffect(() => {
-        console.log("calculator val : ",calc);
+        //console.log("calculator val : ",calc);
     });
 
     const returnUp = () => {
-        console.log("return up");
+        //console.log("return up");
         let op_top:any = $(".op-wrp").offset()?.top;
 
-        $(".op-wrp").slideDown(500);
+
+        $(".op-wrp").css("display","grid");
         $(".app-wrp").scrollTop(op_top);
+        $("Calculator-wrp").css("display","none");
         $(".app-wrp").css("overflow-y","hidden");
     }
 
