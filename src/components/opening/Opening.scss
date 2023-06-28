@@ -10,6 +10,8 @@ $btn-color-hvr: #104f64;
     display: grid;
     grid-template-rows: 1fr 1fr;
 
+    overflow-y: hidden;
+
     .header {
         color: white;
         text-align: center;

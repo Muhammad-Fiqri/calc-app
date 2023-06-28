@@ -4,10 +4,12 @@ import $ from 'jquery';
 export default function Opening() {
 
     const scrollDown = () => {
+        //console.log("scrolling down");
         let calc_top:any = $(".Calculator-wrp").offset()?.top;
-        console.log("tiem to emth");
-        $(".op-wrp").slideUp(500);
+
+        $(".Calculator-wrp").css("display","grid")
         $(".app-wrp").scrollTop(calc_top);
+        $(".op-wrp").css("display","none");
         $(".app-wrp").css("overflow-y","scroll");
     }
 
